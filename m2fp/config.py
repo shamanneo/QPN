@@ -127,6 +127,6 @@ def add_m2fp_config(cfg):
 
     # WandB
     cfg.WANDB = CN({"ENABLED": False})
-    cfg.WANDB.ENTITY = ""
+    cfg.WANDB.ENTITY = "shaman-neo"
     cfg.WANDB.NAME = ""
     cfg.WANDB.PROJECT = "M2FP"
