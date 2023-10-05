@@ -5,8 +5,9 @@
 # https://github.com/NVlabs/FreeSOLO/blob/main/LICENSE
 
 #export GLOO_SOCKET_IFNAME=eth0
+export DETECTRON2_DATASETS="../../datasets"
 python train_net.py \
 	--dist-url tcp://127.0.0.1:$(( RANDOM % 1000 + 20100 )) \
-	--num-gpus 8 \
-	--config configs/cihp/m2fp_R101_bs16_265k.yaml \
-	OUTPUT_DIR training_dir/cihp \
+	--num-gpus 2 \
+	--config configs/lip/m2fp_R101_bs64_72k.yaml \
+	OUTPUT_DIR training_dir/lip \
