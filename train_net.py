@@ -18,6 +18,8 @@ import copy
 import itertools
 import logging
 import os
+import numpy as np
+import random
 
 from collections import OrderedDict
 from typing import Any, Dict, List, Set
@@ -285,8 +287,17 @@ def main(args):
     )
     return trainer.train()
 
+def set_seed(seed) : 
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed) # if use multi-GPU
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    np.random.seed(seed)
+    random.seed(seed)
 
 if __name__ == "__main__":
+    set_seed(1)
     args = default_argument_parser().parse_args()
     print("Command Line Args:", args)
     launch(

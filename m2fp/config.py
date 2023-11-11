@@ -126,7 +126,7 @@ def add_m2fp_config(cfg):
     cfg.MODEL.M2FP.IMPORTANCE_SAMPLE_RATIO = 0.75
 
     # WandB
-    cfg.WANDB = CN({"ENABLED": False})
+    cfg.WANDB = CN({"ENABLED": True})
     cfg.WANDB.ENTITY = "shaman-neo"
-    cfg.WANDB.NAME = ""
+    cfg.WANDB.NAME = "seed_2"
     cfg.WANDB.PROJECT = "M2FP"
